@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Alarm</title>
+    <link rel="stylesheet" href="al.css">
+</head>
+<body>
+    <img src="alarm.png" alt="Alarm Icon" class="app-icon" />
+
+    <main class="app-card">
+        <header class="app-header">
+            <div>
+                <h1>Smart Alarm</h1>
+                <p>Set a beautiful alarm with presets, themes, and emotional tones in practice of use of callbacks,fetchdata and promises in API.</p>
+            </div>
+        </header>
+
+        <img src="al.png" alt="Alarm theme image" class="hero-image" />
+
+        <section class="form-grid">
+            <div class="field">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" />
+            </div>
+
+            <div class="field">
+                <label for="alarm-datetime">Alarm Date & Time</label>
+                <input type="datetime-local" id="alarm-datetime" name="alarm-datetime" />
+            </div>
+
+            <div class="field presets">
+                <label>Quick presets</label>
+                <div class="preset-buttons">
+                    <button type="button" class="preset" data-offset="10">+10 min</button>
+                    <button type="button" class="preset" data-offset="30">+30 min</button>
+                    <button type="button" class="preset" data-offset="60">+1 hr</button>
+                    <button type="button" class="preset" data-offset="120">+2 hr</button>
+                </div>
+            </div>
+
+            <div class="field">
+                <label for="tone">Tone</label>
+                <select id="tone" name="tone">
+                    <option value="emotional">Emotional</option>
+                    <option value="chime">Chime</option>
+                    <option value="soft">Soft</option>
+                </select>
+            </div>
+
+            <div class="field">
+                <label for="volume">Volume</label>
+                <input type="range" id="volume" name="volume" min="0" max="100" value="60" />
+            </div>
+
+            <div class="field toggle-row">
+                <label for="repeat">Auto-repeat</label>
+                <input type="checkbox" id="repeat" name="repeat" />
+            </div>
+        </section>
+
+        <section class="actions">
+            <button id="set-alarm" class="primary">Set alarm</button>
+            <button id="stop-alarm" class="secondary hidden">Stop</button>
+            <button id="snooze-alarm" class="secondary hidden">Snooze</button>
+        </section>
+
+        <section class="status-panel">
+            <div id="output" class="status-message">Ready to set your alarm.</div>
+            <div id="countdown" class="countdown">Waiting...</div>
+            <div class="progress-frame">
+                <div id="progress" class="progress-bar"></div>
+            </div>
+        </section>
+
+        <footer class="footer-note">
+            <span class="hint">Tip:</span> Press Enter after selecting the alarm date and time to set it quickly.
+        </footer>
+    </main>
+
+    <script src="al.js"></script>
+</body>
+</html>
